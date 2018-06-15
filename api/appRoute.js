@@ -5,7 +5,8 @@ const app = express();
  * app.route()を使用すると、ルートパスのチェーン可能なルートハンドラーを作成できる
  * app.get()で同じパスを何度も指定せずに済むため、冗長性とタイプミスを減らせる
  */
-app.route('/events')
+app
+  .route('/events')
   .all((req, res, next) => {
     next();
   })
