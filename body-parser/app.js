@@ -13,12 +13,19 @@ app.use(bodyParser.json());
  */
 app.post('/form', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({
-    firstName: req.body.firstName || null,
-    lastName: req.body.lastName || null
-  }));
+  res.send(
+    JSON.stringify({
+      firstName: req.body.firstName || null,
+      lastName: req.body.lastName || null,
+    })
+  );
 
-  console.log('you posted: First Name: ' + req.body.firstName + ', Last Name: ' + req.body.lastName);
+  console.log(
+    'you posted: First Name: ' +
+      req.body.firstName +
+      ', Last Name: ' +
+      req.body.lastName
+  );
 });
 
 app.listen(3000, () => {
